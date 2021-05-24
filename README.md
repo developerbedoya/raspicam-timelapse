@@ -4,11 +4,11 @@
 The purpose of this scripts is to take some photos from a Raspberry Pi and make a daily stop motion video
 
 ## Usage
-I'm using cron for taking photos each 5 minutes and making videos just before midnight
+I'm using cron for taking photos each minute and making (and updating) the video each hour at minute 59
 
 ```
-*/5 *   * * *   pi  /home/pi/repos/raspicam-timelapse/raspicam_timelapse_photo.sh
-59 23   * * *   pi  /home/pi/repos/raspicam-timelapse/raspicam_timelapse_video.sh
+* *   * * *   pi  /home/pi/repos/raspicam-timelapse/raspicam_timelapse_photo.sh
+59 *   * * *   pi  /home/pi/repos/raspicam-timelapse/raspicam_timelapse_video.sh
 ```
 
 Right now this is saving the pictures in `/home/pi/shared/raspicam-timelapse`, and the timelapse videos in `/home/pi/shared/raspicam-timelapse/video`.

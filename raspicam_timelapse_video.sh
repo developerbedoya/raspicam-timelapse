@@ -8,7 +8,7 @@ old_folder="/home/pi/shared/raspicam-timelapse/old_pics/$date_fmt"
 output_file_name=$date_fmt.mp4
 
 # Video options
-framerate=10
+framerate=30
 
 make_video() {
     ffmpeg \
