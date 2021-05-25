@@ -68,10 +68,8 @@ Options
 
 * `ffmpeg`
 
-## TO-DO:
+## TODO:
 
-### Specify the output folder name as an argument for `raspicam_timelapse_video.sh`
-Right now the output folder is specified in the variable `$output_folder`.
 
 ### Make a daemon for this
 And stop using cron.
