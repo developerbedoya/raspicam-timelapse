@@ -137,7 +137,7 @@ if [ ${#unknown_parameters[@]} -gt 0 ]; then
         echo "Unrecognized option: '$i'"
     done
 
-    help
+    show_help
     exit 1
 fi
 
