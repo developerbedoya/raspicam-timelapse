@@ -70,6 +70,5 @@ Options
 
 ## TODO:
 
-
 ### Make a daemon for this
 And stop using cron.
