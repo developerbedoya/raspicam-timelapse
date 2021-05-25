@@ -14,6 +14,7 @@ I'm using cron for taking photos each minute and making (and updating) the video
 
 ### Taking photos
 
+```
 Usage: 
     raspicam_timelapse_photo.sh (options)
 
@@ -44,8 +45,11 @@ Options
     -m mode, --mode mode
         Set camera mode (see https://www.raspberrypi.org/documentation/raspbian/applications/camera.md)
         (default: 0)
+```
 
 ### Making videos
+
+```
 Usage: 
     raspicam_timelapse_video.sh (options)
 
@@ -58,6 +62,7 @@ Options
     
     -f framerate, --framerate framerate
         Set video framerate (default: 30)
+```
 
 ## Dependencies:
 
