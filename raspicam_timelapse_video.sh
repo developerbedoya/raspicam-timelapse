@@ -2,6 +2,7 @@
 
 # File options
 date_fmt=$(date +"%Y-%m-%d")
+date_fmt_yesterday=$(date +"%Y-%m-%d" -d yesterday)
 working_directory="." # "/home/pi/shared/raspicam-timelapse"
 output_file_name=$date_fmt.mp4
 
@@ -51,6 +52,12 @@ move_old_files() {
     mv "$working_directory/"*.jpg "$old_photos_directory"
 }
 
+delete_yesterday_photos_directory() {
+    yesterday_photos_directory="$working_directory/old_pics/$date_fmt_yesterday"
+    rm -rf "$yesterday_photos_directory" || true
+}
+
+
 # https://stackoverflow.com/a/14203146
 while [[ $# -gt 0 ]]
 do
@@ -88,3 +95,4 @@ fi
 
 move_old_files
 make_video
+delete_yesterday_photos_directory
