@@ -8,8 +8,8 @@ The purpose of this scripts is to take some photos from a Raspberry Pi and make 
 I'm using cron for taking photos each minute and making (and updating) the video each hour at minute 59
 
 ```
-* *   * * *   pi  /home/pi/repos/raspicam-timelapse/raspicam_timelapse_photo.sh -o /home/pi/shared/raspicam-timelapse -a greyworld -m 4
-59 *   * * *   pi  /home/pi/repos/raspicam-timelapse/raspicam_timelapse_video.sh -w /home/pi/shared/raspicam-timelapse
+* *   * * *   /home/pi/repos/raspicam-timelapse/raspicam_timelapse_photo.sh -o /home/pi/shared/raspicam-timelapse -a greyworld -m 4
+59 *   * * *   /home/pi/repos/raspicam-timelapse/raspicam_timelapse_video.sh -w /home/pi/shared/raspicam-timelapse
 ```
 
 ### Taking photos
