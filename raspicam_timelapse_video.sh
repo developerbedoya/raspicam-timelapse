@@ -37,12 +37,12 @@ make_video() {
 
     mkdir -p "$output_directory"
     ffmpeg \
-        -y \
+        -y -hide_banner -loglevel error \
         -framerate $framerate \
         -pattern_type glob \
         -i "$old_photos_directory/*.jpg" \
         -c:v libx264 \
-        "$output_directory/$output_file_name"
+        "$output_directory/$output_file_name" > /dev/null 
 }
 
 move_old_files() {
