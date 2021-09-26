@@ -8,7 +8,7 @@ The purpose of this scripts is to take some photos from a Raspberry Pi and make 
 I'm using cron for taking photos each minute and making (and updating) the video each hour at minute 59
 
 ```
-* *   * * *   /home/pi/repos/raspicam-timelapse/raspicam_timelapse_photo.sh -o /home/pi/shared/raspicam-timelapse -a greyworld -m 4
+* *   * * *   /home/pi/repos/raspicam-timelapse/raspicam_timelapse_photo.sh -o /home/pi/shared/raspicam-timelapse -a auto -m 4
 59 *   * * *   /home/pi/repos/raspicam-timelapse/raspicam_timelapse_video.sh -w /home/pi/shared/raspicam-timelapse
 ```
 
@@ -35,15 +35,15 @@ Options
         Set output quality (0 to 100, default: 70)
 
     -e exposure, --exposure exposure
-        Set exposure mode (see https://www.raspberrypi.org/documentation/raspbian/applications/camera.md)
+        Set exposure mode (see https://www.raspberrypi.org/documentation/accessories/camera.html)
         (default: auto)
 
     -a awb, --awb awb)
-        Set automatic white balance (see https://www.raspberrypi.org/documentation/raspbian/applications/camera.md)
+        Set automatic white balance (see https://www.raspberrypi.org/documentation/accessories/camera.html)
         (default: auto)
 
     -m mode, --mode mode
-        Set camera mode (see https://www.raspberrypi.org/documentation/raspbian/applications/camera.md)
+        Set camera mode (see https://www.raspberrypi.org/documentation/accessories/camera.html)
         (default: 0)
 ```
 
