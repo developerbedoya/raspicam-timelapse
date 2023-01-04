@@ -35,16 +35,12 @@ Options
         Set output quality (0 to 100, default: 70)
 
     -e exposure, --exposure exposure
-        Set exposure mode (see https://www.raspberrypi.org/documentation/accessories/camera.html)
-        (default: auto)
+        Set exposure mode (see https://www.raspberrypi.com/documentation/computers/camera_software.html#common-command-line-options)
+        (default: normal)
 
     -a awb, --awb awb)
-        Set automatic white balance (see https://www.raspberrypi.org/documentation/accessories/camera.html)
+        Set automatic white balance (see https://www.raspberrypi.com/documentation/computers/camera_software.html#common-command-line-options)
         (default: auto)
-
-    -m mode, --mode mode
-        Set camera mode (see https://www.raspberrypi.org/documentation/accessories/camera.html)
-        (default: 0)
 ```
 
 ### Making videos
