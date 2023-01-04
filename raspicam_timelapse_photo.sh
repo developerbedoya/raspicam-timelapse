@@ -7,10 +7,9 @@ height=768
 quality=70
 
 # Camera options
-# Documentation at https://www.raspberrypi.org/documentation/raspbian/applications/camera.md
-exposure=auto
+# Documentation at https://www.raspberrypi.com/documentation/computers/camera_software.html#common-command-line-options
+exposure=normal
 awb=auto
-mode=0
 
 # Fixed parameters
 file_name=$(date +"%Y-%m-%d-%H-%M-%S").jpg
@@ -42,31 +41,25 @@ Options
         Set output quality (0 to 100, default: 70)
 
     -e exposure, --exposure exposure
-        Set exposure mode (see https://www.raspberrypi.org/documentation/raspbian/applications/camera.md)
-        (default: auto)
+        Set exposure mode (see https://www.raspberrypi.com/documentation/computers/camera_software.html#common-command-line-options)
+        (default: normal)
 
     -a awb, --awb awb)
-        Set automatic white balance (see https://www.raspberrypi.org/documentation/raspbian/applications/camera.md)
+        Set automatic white balance (see https://www.raspberrypi.com/documentation/computers/camera_software.html#common-command-line-options)
         (default: auto)
-
-    -m mode, --mode mode
-        Set camera mode (see https://www.raspberrypi.org/documentation/raspbian/applications/camera.md)
-        (default: 0)
 
 EOF
 }
 
 take_photo() {
-    raspistill \
+    libcamera-jpeg \
+	--tuning-file /usr/share/libcamera/ipa/raspberrypi/imx219_noir.json \
         --nopreview \
-        --exposure $exposure \
-        --awb $awb \
-        --mode $mode \
-        --annotate 4 \
-        --annotate "$annotate" \
         --width $width \
         --height $height \
         --quality $quality \
+	--exposure $exposure \
+	--awb $awb \
         --output "$output_directory/$file_name"
 }
 
@@ -117,13 +110,7 @@ do
             shift
             shift
             ;;
-
-        -m|--mode)
-            mode="$2"
-            shift
-            shift
-            ;;
-
+	
         *)
             unknown_parameters+=("$1")
             shift
