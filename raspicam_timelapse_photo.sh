@@ -2,8 +2,8 @@
 
 # File options
 output_directory="."
-width=1024
-height=768
+width=1640
+height=1232
 quality=70
 
 # Camera options
@@ -32,10 +32,10 @@ Options
         Set output directory (defaults to current directory)
     
     -w width, --width width
-        Set output width (default: 1024)
+        Set output width (default: 1640)
 
     -h height, --height height
-        Set output height (default: 768)
+        Set output height (default: 1232)
             
     -q quality, --quality quality
         Set output quality (0 to 100, default: 70)
