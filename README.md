@@ -63,6 +63,7 @@ Options
 ## Dependencies:
 
 * `ffmpeg`
+* `imagemagick`
 
 ## TODO:
 

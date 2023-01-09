@@ -13,7 +13,7 @@ awb=auto
 
 # Fixed parameters
 file_name=$(date +"%Y-%m-%d-%H-%M-%S").jpg
-annotate="%d/%m/%y %H:%M:%S"
+annotate=$(date +"%d/%m/%y %H:%M:%S")
 
 # Unknown parameters
 unknown_parameters=()
@@ -49,6 +49,10 @@ Options
         (default: auto)
 
 EOF
+}
+
+label_photo() {
+    convert "$output_directory/$file_name" -background white label:"$annotate" -gravity Center -append "$output_directory/$file_name"
 }
 
 take_photo() {
@@ -129,3 +133,4 @@ if [ ${#unknown_parameters[@]} -gt 0 ]; then
 fi
 
 take_photo
+label_photo

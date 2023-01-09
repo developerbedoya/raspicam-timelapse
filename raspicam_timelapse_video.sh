@@ -75,6 +75,12 @@ do
             shift
             ;;
 
+	-f|--framerate)
+	    framerate="$2"
+	    shift
+	    shift
+	    ;;
+
         *)
             unknown_parameters+=("$1")
             shift
